@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1914C0B121C895D6006F1B32 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0B021C895D6006F1B32 /* APIRequest.swift */; };
+		1914C0B321C89AD8006F1B32 /* AchieveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0B221C89AD8006F1B32 /* AchieveViewController.swift */; };
+		1914C0B921C8CD5A006F1B32 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0B821C8CD5A006F1B32 /* SignUpInfo.swift */; };
+		1914C0BB21C8CDAA006F1B32 /* LogInInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0BA21C8CDAA006F1B32 /* LogInInfo.swift */; };
+		1914C0BD21C8CE45006F1B32 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0BC21C8CE45006F1B32 /* Token.swift */; };
+		1914C0BF21C8CE9F006F1B32 /* StartGameCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0BE21C8CE9F006F1B32 /* StartGameCheck.swift */; };
+		1914C0C121C8D03F006F1B32 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0C021C8D03F006F1B32 /* ResponseData.swift */; };
+		1914C0C321C8D163006F1B32 /* ResponseGameStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0C221C8D163006F1B32 /* ResponseGameStart.swift */; };
+		1914C0C921C8E86E006F1B32 /* ResponseSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0C821C8E86E006F1B32 /* ResponseSignUp.swift */; };
+		1914C0CB21C8F2D7006F1B32 /* ResponseAutoLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0CA21C8F2D7006F1B32 /* ResponseAutoLogIn.swift */; };
+		1914C0CD21C9493E006F1B32 /* AchieveAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0CC21C9493E006F1B32 /* AchieveAllViewController.swift */; };
+		1914C0CF21C97B75006F1B32 /* SaveAchieve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0CE21C97B75006F1B32 /* SaveAchieve.swift */; };
+		1914C0D121C97E18006F1B32 /* ResponseAchieve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0D021C97E17006F1B32 /* ResponseAchieve.swift */; };
+		1914C0D321C990AB006F1B32 /* ResponsePlayHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1914C0D221C990AB006F1B32 /* ResponsePlayHistory.swift */; };
+		1944AC0521CA8E09001C3885 /* PurchaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944AC0421CA8E09001C3885 /* PurchaseItem.swift */; };
+		1944AC0721CA9074001C3885 /* ResponseShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944AC0621CA9074001C3885 /* ResponseShop.swift */; };
+		19A1AB5821C7BB3D00A66B13 /* LightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1AB5721C7BB3D00A66B13 /* LightImageView.swift */; };
 		19C4B59D21C737270043E08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4B59C21C737270043E08A /* AppDelegate.swift */; };
 		19C4B59F21C737270043E08A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4B59E21C737270043E08A /* ViewController.swift */; };
 		19C4B5A221C737270043E08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C4B5A021C737270043E08A /* Main.storyboard */; };
@@ -14,6 +31,9 @@
 		19C4B5A721C737280043E08A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C4B5A521C737280043E08A /* LaunchScreen.storyboard */; };
 		19C4B5B221C737280043E08A /* GameChallengeDay1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4B5B121C737280043E08A /* GameChallengeDay1Tests.swift */; };
 		19C4B5BD21C737280043E08A /* GameChallengeDay1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4B5BC21C737280043E08A /* GameChallengeDay1UITests.swift */; };
+		19C4B5CB21C74BBB0043E08A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4B5CA21C74BBB0043E08A /* GameViewController.swift */; };
+		19C4B5CD21C74BDB0043E08A /* PlayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4B5CC21C74BDB0043E08A /* PlayHistoryViewController.swift */; };
+		19C4B5CF21C74FE60043E08A /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4B5CE21C74FE60043E08A /* DepositViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +54,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1914C0B021C895D6006F1B32 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		1914C0B221C89AD8006F1B32 /* AchieveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchieveViewController.swift; sourceTree = "<group>"; };
+		1914C0B821C8CD5A006F1B32 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
+		1914C0BA21C8CDAA006F1B32 /* LogInInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInInfo.swift; sourceTree = "<group>"; };
+		1914C0BC21C8CE45006F1B32 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		1914C0BE21C8CE9F006F1B32 /* StartGameCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCheck.swift; sourceTree = "<group>"; };
+		1914C0C021C8D03F006F1B32 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		1914C0C221C8D163006F1B32 /* ResponseGameStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseGameStart.swift; sourceTree = "<group>"; };
+		1914C0C821C8E86E006F1B32 /* ResponseSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSignUp.swift; sourceTree = "<group>"; };
+		1914C0CA21C8F2D7006F1B32 /* ResponseAutoLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAutoLogIn.swift; sourceTree = "<group>"; };
+		1914C0CC21C9493E006F1B32 /* AchieveAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchieveAllViewController.swift; sourceTree = "<group>"; };
+		1914C0CE21C97B75006F1B32 /* SaveAchieve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAchieve.swift; sourceTree = "<group>"; };
+		1914C0D021C97E17006F1B32 /* ResponseAchieve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAchieve.swift; sourceTree = "<group>"; };
+		1914C0D221C990AB006F1B32 /* ResponsePlayHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsePlayHistory.swift; sourceTree = "<group>"; };
+		1944AC0421CA8E09001C3885 /* PurchaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseItem.swift; sourceTree = "<group>"; };
+		1944AC0621CA9074001C3885 /* ResponseShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseShop.swift; sourceTree = "<group>"; };
+		19A1AB5721C7BB3D00A66B13 /* LightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightImageView.swift; sourceTree = "<group>"; };
 		19C4B59921C737270043E08A /* GameChallengeDay1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameChallengeDay1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C4B59C21C737270043E08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C4B59E21C737270043E08A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +84,9 @@
 		19C4B5B821C737280043E08A /* GameChallengeDay1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameChallengeDay1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C4B5BC21C737280043E08A /* GameChallengeDay1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameChallengeDay1UITests.swift; sourceTree = "<group>"; };
 		19C4B5BE21C737280043E08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C4B5CA21C74BBB0043E08A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		19C4B5CC21C74BDB0043E08A /* PlayHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayHistoryViewController.swift; sourceTree = "<group>"; };
+		19C4B5CE21C74FE60043E08A /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +114,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1914C0C421C8D1D5006F1B32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1914C0B821C8CD5A006F1B32 /* SignUpInfo.swift */,
+				1914C0BC21C8CE45006F1B32 /* Token.swift */,
+				1914C0BE21C8CE9F006F1B32 /* StartGameCheck.swift */,
+				1914C0C021C8D03F006F1B32 /* ResponseData.swift */,
+				1914C0CA21C8F2D7006F1B32 /* ResponseAutoLogIn.swift */,
+				1914C0C821C8E86E006F1B32 /* ResponseSignUp.swift */,
+				1914C0C221C8D163006F1B32 /* ResponseGameStart.swift */,
+				1914C0BA21C8CDAA006F1B32 /* LogInInfo.swift */,
+				1914C0CE21C97B75006F1B32 /* SaveAchieve.swift */,
+				1914C0D021C97E17006F1B32 /* ResponseAchieve.swift */,
+				1914C0D221C990AB006F1B32 /* ResponsePlayHistory.swift */,
+				1944AC0621CA9074001C3885 /* ResponseShop.swift */,
+				1944AC0421CA8E09001C3885 /* PurchaseItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1914C0C521C8D22A006F1B32 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19C4B59E21C737270043E08A /* ViewController.swift */,
+				1914C0B221C89AD8006F1B32 /* AchieveViewController.swift */,
+				1914C0CC21C9493E006F1B32 /* AchieveAllViewController.swift */,
+				19C4B5CC21C74BDB0043E08A /* PlayHistoryViewController.swift */,
+				19C4B5CA21C74BBB0043E08A /* GameViewController.swift */,
+				19C4B5CE21C74FE60043E08A /* DepositViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1914C0C621C8D251006F1B32 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				19C4B5A021C737270043E08A /* Main.storyboard */,
+				19A1AB5721C7BB3D00A66B13 /* LightImageView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		1914C0C721C8D272006F1B32 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1914C0B021C895D6006F1B32 /* APIRequest.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		19C4B59021C737270043E08A = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +187,14 @@
 		19C4B59B21C737270043E08A /* GameChallengeDay1 */ = {
 			isa = PBXGroup;
 			children = (
-				19C4B59C21C737270043E08A /* AppDelegate.swift */,
-				19C4B59E21C737270043E08A /* ViewController.swift */,
-				19C4B5A021C737270043E08A /* Main.storyboard */,
+				1914C0C421C8D1D5006F1B32 /* Models */,
+				1914C0C521C8D22A006F1B32 /* Controllers */,
+				1914C0C721C8D272006F1B32 /* Services */,
+				1914C0C621C8D251006F1B32 /* VIews */,
 				19C4B5A321C737280043E08A /* Assets.xcassets */,
 				19C4B5A521C737280043E08A /* LaunchScreen.storyboard */,
 				19C4B5A821C737280043E08A /* Info.plist */,
+				19C4B59C21C737270043E08A /* AppDelegate.swift */,
 			);
 			path = GameChallengeDay1;
 			sourceTree = "<group>";
@@ -256,8 +348,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1914C0CF21C97B75006F1B32 /* SaveAchieve.swift in Sources */,
 				19C4B59F21C737270043E08A /* ViewController.swift in Sources */,
+				1944AC0521CA8E09001C3885 /* PurchaseItem.swift in Sources */,
+				1914C0B121C895D6006F1B32 /* APIRequest.swift in Sources */,
+				1914C0BD21C8CE45006F1B32 /* Token.swift in Sources */,
+				1914C0CB21C8F2D7006F1B32 /* ResponseAutoLogIn.swift in Sources */,
+				1944AC0721CA9074001C3885 /* ResponseShop.swift in Sources */,
+				1914C0CD21C9493E006F1B32 /* AchieveAllViewController.swift in Sources */,
+				1914C0B921C8CD5A006F1B32 /* SignUpInfo.swift in Sources */,
+				1914C0B321C89AD8006F1B32 /* AchieveViewController.swift in Sources */,
+				19A1AB5821C7BB3D00A66B13 /* LightImageView.swift in Sources */,
+				1914C0D121C97E18006F1B32 /* ResponseAchieve.swift in Sources */,
+				1914C0C321C8D163006F1B32 /* ResponseGameStart.swift in Sources */,
+				1914C0D321C990AB006F1B32 /* ResponsePlayHistory.swift in Sources */,
+				1914C0BF21C8CE9F006F1B32 /* StartGameCheck.swift in Sources */,
+				1914C0C121C8D03F006F1B32 /* ResponseData.swift in Sources */,
+				19C4B5CD21C74BDB0043E08A /* PlayHistoryViewController.swift in Sources */,
+				1914C0C921C8E86E006F1B32 /* ResponseSignUp.swift in Sources */,
+				19C4B5CB21C74BBB0043E08A /* GameViewController.swift in Sources */,
 				19C4B59D21C737270043E08A /* AppDelegate.swift in Sources */,
+				19C4B5CF21C74FE60043E08A /* DepositViewController.swift in Sources */,
+				1914C0BB21C8CDAA006F1B32 /* LogInInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
