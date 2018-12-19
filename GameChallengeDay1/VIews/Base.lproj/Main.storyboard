@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AFz-hf-3Cw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
+                                <rect key="frame" x="0.0" y="67" width="414" height="627"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -59,8 +59,15 @@
                                     <outlet property="delegate" destination="gIe-NS-Wb1" id="CTq-qK-6yh"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Achievements of All Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfw-Gt-IAZ">
+                                <rect key="frame" x="0.0" y="20" width="414" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                <color key="textColor" red="0.76195669420000001" green="0.2510780796" blue="0.1470434638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9fL-Ym-W3c"/>
                     </view>
                     <connections>
@@ -81,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dPa-O5-Zzu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="698"/>
+                                <rect key="frame" x="0.0" y="65" width="414" height="627"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -110,7 +117,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrO-tl-ee9">
-                                <rect key="frame" x="0.0" y="696" width="410" height="40"/>
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back">
@@ -120,6 +127,13 @@
                                     <segue destination="2pa-Ar-pRc" kind="unwind" unwindAction="backToMenuWithSegue:" id="9Hf-Su-SRg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Achievements of Light On" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIG-6k-U2b">
+                                <rect key="frame" x="0.0" y="20" width="414" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                <color key="textColor" red="0.76195669420000001" green="0.2510780796" blue="0.1470434638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="22J-Cl-2PM"/>
@@ -131,7 +145,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQy-BY-dqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2pa-Ar-pRc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="132" y="973"/>
+            <point key="canvasLocation" x="131.8840579710145" y="972.554347826087"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -267,11 +281,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tad-9s-KPu">
-                                <rect key="frame" x="123" y="614" width="168" height="47"/>
+                                <rect key="frame" x="112" y="614" width="190" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
-                                <state key="normal" title="Achieve">
+                                <state key="normal" title="Achievements">
                                     <color key="titleColor" red="0.76195669420000001" green="0.2510780796" blue="0.1470434638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -638,6 +652,15 @@
                         <outletCollection property="itemImageViewCollection" destination="Y5W-TQ-Ulq" collectionClass="NSMutableArray" id="42w-ko-N8I"/>
                         <outletCollection property="itemImageViewCollection" destination="O93-YT-F0b" collectionClass="NSMutableArray" id="Jp4-MI-qgM"/>
                         <outletCollection property="itemImageViewCollection" destination="2sZ-RL-N9I" collectionClass="NSMutableArray" id="ObS-i1-8Sc"/>
+                        <outletCollection property="buyButtonCollection" destination="Jbf-zw-D2f" collectionClass="NSMutableArray" id="gha-kq-dWu"/>
+                        <outletCollection property="buyButtonCollection" destination="UY1-Td-OtI" collectionClass="NSMutableArray" id="djp-tf-ubs"/>
+                        <outletCollection property="buyButtonCollection" destination="4BS-jo-LbQ" collectionClass="NSMutableArray" id="fX5-kx-nx3"/>
+                        <outletCollection property="buyButtonCollection" destination="Dil-dH-Cw0" collectionClass="NSMutableArray" id="fdI-if-JCa"/>
+                        <outletCollection property="buyButtonCollection" destination="SsY-GH-Eqt" collectionClass="NSMutableArray" id="7jd-8k-Rer"/>
+                        <outletCollection property="buyButtonCollection" destination="7LK-Pm-aIE" collectionClass="NSMutableArray" id="o24-LO-MGE"/>
+                        <outletCollection property="buyButtonCollection" destination="gR2-7w-g9j" collectionClass="NSMutableArray" id="FF4-7U-V9L"/>
+                        <outletCollection property="buyButtonCollection" destination="8se-au-hpb" collectionClass="NSMutableArray" id="LkR-p6-ZwV"/>
+                        <outletCollection property="buyButtonCollection" destination="36W-Xy-JTS" collectionClass="NSMutableArray" id="Pd0-sv-UD3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwV-Ax-wNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -855,7 +878,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cs1-SA-Qdx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="627"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -895,8 +918,15 @@
                                     <segue destination="9L8-uO-K4j" kind="unwind" unwindAction="backToMenuWithSegue:" id="6Ub-94-6JK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvP-bT-h5k">
+                                <rect key="frame" x="0.0" y="20" width="414" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                <color key="textColor" red="0.76195669420000001" green="0.2510780796" blue="0.1470434638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cuU-iX-wtq"/>
                     </view>
                     <connections>

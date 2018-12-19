@@ -21,7 +21,7 @@ class APIrequest {
     typealias completionHandle6 = (_ responseData: ResponseShop) -> Void
     
     func signUp(_ name: String, _ email: String, _ password: String, _ passwordConfirm: String, result: @escaping completionHandle2) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/register") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/register") else {return}
         
         var requset = URLRequest(url: url)
         requset.httpMethod = "POST"
@@ -50,7 +50,7 @@ class APIrequest {
     }
     
     func logIn(_ email: String, _ password: String, result: @escaping completionHandle) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/login") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/login") else {return}
         
         print("login")
         
@@ -81,7 +81,7 @@ class APIrequest {
     }
     
     func autoLogIn(_ token: String, result: @escaping completionHandle3) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/autologin") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/autologin") else {return}
         
         var requset = URLRequest(url: url)
         requset.httpMethod = "POST"
@@ -108,7 +108,7 @@ class APIrequest {
     }
     
     func startGame(_ token: String, result: @escaping completionHandle) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/play") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/play") else {return}
         
         var requset = URLRequest(url: url)
         requset.httpMethod = "POST"
@@ -135,7 +135,7 @@ class APIrequest {
     
     
     func askForPlayHistory(_ token: String, result: @escaping completionHandle5) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/detail") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/detail") else {return}
         
         var requset = URLRequest(url: url)
         requset.httpMethod = "GET"
@@ -156,7 +156,7 @@ class APIrequest {
     
     
     func saveAchieve(_ token: String, _ id: String, result: @escaping completionHandle2) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/achievement") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/achievement") else {return}
         
         var requset = URLRequest(url: url)
         requset.httpMethod = "POST"
@@ -183,7 +183,7 @@ class APIrequest {
     
     
     func askForAchieveAll(_ token: String, result: @escaping completionHandle4) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/achievement") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/achievement") else {return}
         
         var requset = URLRequest(url: url)
         requset.httpMethod = "GET"
@@ -203,7 +203,7 @@ class APIrequest {
     }
     
     func purchaseItem(_ token: String, _ itemId: Int, result: @escaping completionHandle2) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/achievement") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/shop") else {return}
         
         var requset = URLRequest(url: url)
         requset.httpMethod = "POST"
@@ -225,7 +225,7 @@ class APIrequest {
     
     
     func askForOwnedItem(_ token: String, result: @escaping completionHandle6) {
-        guard let url = URL(string: "http://192.168.52.130:8000/api/achievement") else {return}
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/shop/3") else {return}
         
         var requset = URLRequest(url: url)
         requset.httpMethod = "POST"
@@ -243,5 +243,25 @@ class APIrequest {
         }
         task.resume()
     }
-
+    
+    func getBalance(_ token: String, result: @escaping completionHandle) {
+        guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/shop/3") else {return}
+        
+        var requset = URLRequest(url: url)
+        requset.httpMethod = "GET"
+        requset.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        requset.addValue("application/json", forHTTPHeaderField: "Accept")
+        requset.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: requset) { (mydata, myresponse, myerror) in
+            guard let data = mydata else {return}
+            do {
+                let responseData = try JSONDecoder().decode(ResponseData.self, from: data)
+                result(responseData)
+            } catch {}
+        }
+        task.resume()
+    }
+    
 }

@@ -76,7 +76,6 @@ class ViewController: UIViewController {
                     
                 }
             }
-//            do api sign up
         }
     }
     
@@ -95,7 +94,7 @@ class ViewController: UIViewController {
         accountTextField.text = ""
         passwordTextField.text = ""
         confirmTextField.text = ""
-        UserDefaults.standard.set("", forKey: "api_token")
+        UserDefaults.standard.set(nil, forKey: "api_token")
         coin = 0
     }
     
@@ -117,6 +116,7 @@ class ViewController: UIViewController {
                         self.startButton.isEnabled = true
                         self.logInButton.isHidden = true
                         self.signUpButton.isHidden = true
+                        self.shopButton.isEnabled = true
                         
                         UIView.animate(withDuration: 2, animations: {
                             self.messageLabel.text = "Welcome, \(response.data?.name ?? "")"

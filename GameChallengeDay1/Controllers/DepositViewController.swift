@@ -24,6 +24,7 @@ class DepositViewController: UIViewController {
     
     
     @IBOutlet var chooseButtonCollection: [UIButton]!
+    @IBOutlet var buyButtonCollection: [UIButton]!
     @IBOutlet var itemImageViewCollection: [UIImageView]!
     
     
@@ -31,11 +32,20 @@ class DepositViewController: UIViewController {
     
     var itemsToPurchase = [UIImage(named: "item1"),UIImage(named: "item2"),UIImage(named: "item3"),UIImage(named: "item4"),UIImage(named: "item5"),UIImage(named: "item6"),UIImage(named: "item7"),UIImage(named: "item8"),UIImage(named: "item9")]
     
-    var coin = 0
+    var coin = 0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.coinLeftLabel.text = "\(self.coin)p left"
+            }
+        }
+    }
     var ownedList = [Int]()
     
     @IBAction func purchaseItem(_ sender: UIButton) {
         sender.setOwned()
+        APIrequest.shared.getBalance(UserDefaults.standard.string(forKey: "api_token")!) { (response) in
+            self.coin = (response.data?.balance)!
+        }
         for button in chooseButtonCollection {
             if button.tag == sender.tag {
                 button.isEnabled = true
@@ -59,6 +69,68 @@ class DepositViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for items in ownedList {
+            switch items {
+            case 1:
+                for button in buyButtonCollection {
+                    if button.tag == 1 {
+                        button.setOwned()
+                    }
+                }
+            case 2:
+                for button in buyButtonCollection {
+                    if button.tag == 2 {
+                        button.setOwned()
+                    }
+                }
+            case 3:
+                for button in buyButtonCollection {
+                    if button.tag == 3 {
+                        button.setOwned()
+                    }
+                }
+            case 4:
+                for button in buyButtonCollection {
+                    if button.tag == 4 {
+                        button.setOwned()
+                    }
+                }
+            case 5:
+                for button in buyButtonCollection {
+                    if button.tag == 5 {
+                        button.setOwned()
+                    }
+                }
+            case 6:
+                for button in buyButtonCollection {
+                    if button.tag == 6 {
+                        button.setOwned()
+                    }
+                }
+            case 7:
+                for button in buyButtonCollection {
+                    if button.tag == 7 {
+                        button.setOwned()
+                    }
+                }
+            case 8:
+                for button in buyButtonCollection {
+                    if button.tag == 8 {
+                        button.setOwned()
+                    }
+                }
+            case 9:
+                for button in buyButtonCollection {
+                    if button.tag == 9 {
+                        button.setOwned()
+                    }
+                }
+            default:
+                break
+            }
+        }
+        
         
         coinLeftLabel.text = "\(coin)p left"
         
@@ -90,7 +162,6 @@ extension UIButton {
         self.isEnabled = false
         self.backgroundColor = UIColor.darkGray
         APIrequest.shared.purchaseItem(UserDefaults.standard.string(forKey: "api_token")!, tag) { (_) in
-            
         }
     }
     
