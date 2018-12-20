@@ -21,4 +21,4 @@ Rules:
 
 Demo:
 
-![gif](https://i.imgur.com/Cb65C9G.gif)
+![gif](https://github.com/atyrcp/Light-On/blob/master/Demo.gif)
