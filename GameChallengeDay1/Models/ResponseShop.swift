@@ -14,7 +14,7 @@ struct ResponseShop: Decodable {
     
     struct ShopInfo: Decodable {
         
-        var game_id: Int
+//        var game_id: Int
         var item_id: Int
     }
 }

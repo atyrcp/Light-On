@@ -131,6 +131,7 @@ class GameViewController: UIViewController {
         if newArray == checkIfWinArray {
             print("winnnnn")
             backToMenuButton.frame = self.view.frame
+            backToMenuButton.setTitle("You Win!", for: .normal)
             backToMenuButton.isHidden = false
         } else {
             print("nooo")
@@ -372,16 +373,19 @@ class GameViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
-            let item = UserDefaults.standard.string(forKey: "item")
-            self.ghostImageView.image = UIImage(named: item!) ?? UIImage(named: "ghost")
-            UIView.animate(withDuration: 5, animations: {
+            if let item = UserDefaults.standard.string(forKey: "item") {
+                self.ghostImageView.image = UIImage(named: item)
+            } else {
+                self.ghostImageView.image = UIImage(named: "ghost")
+            }
+            UIView.animate(withDuration: 10, animations: {
                 self.ghostImageView.alpha = 1
             })
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 40) {
             
-            UIView.animate(withDuration: 5, animations: {
+            UIView.animate(withDuration: 20, animations: {
                 let lastPosition = CGPoint(x: self.ghostImageView.center.x, y: self.ghostImageView.center.y + 550)
                 
                 self.ghostImageView.center = lastPosition

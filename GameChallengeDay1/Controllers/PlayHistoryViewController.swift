@@ -51,7 +51,7 @@ class PlayHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         
         if let token = UserDefaults.standard.string(forKey: "api_token") {
             APIrequest.shared.askForPlayHistory(token) { (response) in
-                self.playRecord = response.data.map() { $0.updated_at + "         " + String($0.amount) }
+                self.playRecord = response.data.map() { $0.updated_at + "       " + $0.description + "       " +  String($0.amount) }
                 self.playRecordInt = response.data.map() { $0.game_id }
                 DispatchQueue.main.async {
                     self.tableview.reloadData()

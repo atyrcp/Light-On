@@ -17,6 +17,7 @@ struct ResponsePlayHistory: Decodable {
         var user_id: Int
         var game_id: Int
         var amount: Int
+        var description: String
         var updated_at: String
     }
 }

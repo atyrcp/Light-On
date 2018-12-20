@@ -24,8 +24,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var shopButton: UIButton!
     
     
-    
-    
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
@@ -48,7 +46,11 @@ class ViewController: UIViewController {
             print("inside signup")
             APIrequest.shared.signUp(nameTextField.text!, accountTextField.text!, passwordTextField.text!, confirmTextField.text!) { (response) in
                 if response.result == "success" {
+                    
                     DispatchQueue.main.async {
+                        //set achieveCount
+                        UserDefaults.standard.set(0, forKey: "\(String(describing: self.accountTextField.text))")
+                        //
                         self.messageLabel.text = "welcom, please login"
                         UIView.animate(withDuration: 2, animations: {
                             self.messageLabel.alpha = 1
@@ -71,9 +73,6 @@ class ViewController: UIViewController {
                             })
                         })
                     }
-                    
-                    
-                    
                 }
             }
         }
@@ -90,6 +89,7 @@ class ViewController: UIViewController {
         nameTextField.isEnabled = true
         startButton.isEnabled = false
         signUpButton.isHidden = false
+        shopButton.isEnabled = false
         nameTextField.text = ""
         accountTextField.text = ""
         passwordTextField.text = ""
@@ -117,6 +117,8 @@ class ViewController: UIViewController {
                         self.logInButton.isHidden = true
                         self.signUpButton.isHidden = true
                         self.shopButton.isEnabled = true
+                        
+                        self.achieveCount = UserDefaults.standard.integer(forKey: "\(String(describing: self.accountTextField.text))")
                         
                         UIView.animate(withDuration: 2, animations: {
                             self.messageLabel.text = "Welcome, \(response.data?.name ?? "")"
@@ -149,13 +151,29 @@ class ViewController: UIViewController {
         let token = UserDefaults.standard.string(forKey: "api_token")
         APIrequest.shared.askForOwnedItem(token!) { (response) in
             DispatchQueue.main.async {
-                self.ownedList = response.data.filter() {$0.game_id == 3}.map() { $0.item_id }
+                self.ownedList = response.data.map() { $0.item_id }
                 self.performSegue(withIdentifier: "showShop", sender: sender)
             }
+            
         }
         
-        self.performSegue(withIdentifier: "showShop", sender: sender)
+        
     }
+    
+    
+    
+    @IBAction func howToPlay(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "遊戲規則", message: "遊戲開始前10秒會隨機亮起6盞燈，請記好這6盞燈的位置 \n \n遊戲開始後，操控底下按鈕把燈點亮，每顆按鈕各控制兩盞燈 \n \n將燈點亮，還原成原本的位置即獲勝，若耗時過久則失敗 \n \n遊戲進行時長按螢幕，可於右上角顯示提示縮圖", preferredStyle: .alert)
+
+        let action = UIAlertAction(title: "Got it", style: .cancel) { (_) in
+            
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
     
     
     @IBAction func startGame(_ sender: UIButton) {
@@ -171,10 +189,10 @@ class ViewController: UIViewController {
                     }
                     if self.coin >= 10 {
                         self.achieveCount += 1
-                        UserDefaults.standard.set(self.achieveCount, forKey: "achieveCount")
+                        UserDefaults.standard.set(self.achieveCount, forKey: "\(String(describing: self.accountTextField.text))")
                         
                         switch self.achieveCount {
-                        case 2:
+                        case 1:
                             APIrequest.shared.saveAchieve(token, "14", result: { (_) in
                                 return
                             })
@@ -246,16 +264,19 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+//        if let token = UserDefaults.standard.string(forKey: "api_token") {
+//            APIrequest.shared.getBalance(token) { (response) in
+//                DispatchQueue.main.async {
+//                    self.coin = (response.data?.balance)!
+//                }
+//            }
+//        }
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let int = UserDefaults.standard.value(forKey: "achieveCount") as? Int {
-            achieveCount = int
-        }
+        UserDefaults.standard.set(nil, forKey: "item")
         
         
         messageLabel.alpha = 0

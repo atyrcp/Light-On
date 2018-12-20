@@ -37,11 +37,11 @@ class AchieveViewController: UIViewController, UITableViewDataSource, UITableVie
                 for item in array {
                     switch item {
                     case 14:
-                        self.achieveHistory.append("初次探險          進入遊戲1次")
+                        self.achieveHistory.append("初次探險                     進入遊戲1次")
                     case 15:
-                        self.achieveHistory.append("逐漸麻痺          進入遊戲10次")
+                        self.achieveHistory.append("逐漸麻痺                     進入遊戲10次")
                     case 16:
-                        self.achieveHistory.append("膽大包天          進入遊戲100次")
+                        self.achieveHistory.append("膽大包天                     進入遊戲100次")
                     default:
                         break
                     }

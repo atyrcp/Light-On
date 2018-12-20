@@ -202,7 +202,7 @@ class APIrequest {
         task.resume()
     }
     
-    func purchaseItem(_ token: String, _ itemId: Int, result: @escaping completionHandle2) {
+    func purchaseItem(_ token: String, _ itemId: Int, result: @escaping completionHandle) {
         guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/shop") else {return}
         
         var requset = URLRequest(url: url)
@@ -219,6 +219,12 @@ class APIrequest {
         
         let session = URLSession.shared
         let task = session.dataTask(with: requset) { (mydata, myresponse, myerror) in
+            guard let data = mydata else {return}
+            do {
+                let responseData = try JSONDecoder().decode(ResponseData.self, from: data)
+                result(responseData)
+                print(responseData)
+            } catch {}
         }
         task.resume()
     }
@@ -228,7 +234,7 @@ class APIrequest {
         guard let url = URL(string: "http://ba33b5ee.ngrok.io/api/shop/3") else {return}
         
         var requset = URLRequest(url: url)
-        requset.httpMethod = "POST"
+        requset.httpMethod = "GET"
         requset.addValue("application/json", forHTTPHeaderField: "Content-Type")
         requset.addValue("application/json", forHTTPHeaderField: "Accept")
         requset.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
@@ -239,6 +245,7 @@ class APIrequest {
             do {
                 let responseData = try JSONDecoder().decode(ResponseShop.self, from: data)
                 result(responseData)
+                print(responseData)
             } catch {}
         }
         task.resume()

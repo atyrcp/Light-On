@@ -32,23 +32,24 @@ class DepositViewController: UIViewController {
     
     var itemsToPurchase = [UIImage(named: "item1"),UIImage(named: "item2"),UIImage(named: "item3"),UIImage(named: "item4"),UIImage(named: "item5"),UIImage(named: "item6"),UIImage(named: "item7"),UIImage(named: "item8"),UIImage(named: "item9")]
     
-    var coin = 0 {
-        didSet {
-            DispatchQueue.main.async {
-                self.coinLeftLabel.text = "\(self.coin)p left"
-            }
-        }
-    }
+    var coin = 0
     var ownedList = [Int]()
     
     @IBAction func purchaseItem(_ sender: UIButton) {
-        sender.setOwned()
-        APIrequest.shared.getBalance(UserDefaults.standard.string(forKey: "api_token")!) { (response) in
-            self.coin = (response.data?.balance)!
-        }
-        for button in chooseButtonCollection {
-            if button.tag == sender.tag {
-                button.isEnabled = true
+        
+        APIrequest.shared.purchaseItem(UserDefaults.standard.string(forKey: "api_token")!, sender.tag) { (response) in
+            if response.result == "success" {
+                DispatchQueue.main.async {
+                    sender.setOwned()
+                    
+                    self.coin = (response.data?.balance)!
+                    self.coinLeftLabel.text = "\(self.coin)p left"
+                    for button in self.chooseButtonCollection {
+                        if button.tag == sender.tag {
+                            button.isEnabled = true
+                        }
+                    }
+                }
             }
         }
     }
@@ -67,8 +68,27 @@ class DepositViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ViewController {
+            vc.coin = self.coin
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super .viewWillDisappear(animated)
+        
+        self.ownedList = [Int]()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let token = UserDefaults.standard.string(forKey: "api_token")
+        APIrequest.shared.getBalance(token!) { (response) in
+            DispatchQueue.main.async {
+                self.coin = (response.data?.balance)!
+                self.coinLeftLabel.text = "\(self.coin)p left"
+            }
+        }
         
         for items in ownedList {
             switch items {
@@ -78,10 +98,24 @@ class DepositViewController: UIViewController {
                         button.setOwned()
                     }
                 }
+                for button in chooseButtonCollection {
+                    if button.tag == 1 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
+                    }
+                }
             case 2:
                 for button in buyButtonCollection {
                     if button.tag == 2 {
                         button.setOwned()
+                    }
+                }
+                for button in chooseButtonCollection {
+                    if button.tag == 2 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
                     }
                 }
             case 3:
@@ -90,10 +124,24 @@ class DepositViewController: UIViewController {
                         button.setOwned()
                     }
                 }
+                for button in chooseButtonCollection {
+                    if button.tag == 3 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
+                    }
+                }
             case 4:
                 for button in buyButtonCollection {
                     if button.tag == 4 {
                         button.setOwned()
+                    }
+                }
+                for button in chooseButtonCollection {
+                    if button.tag == 4 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
                     }
                 }
             case 5:
@@ -102,10 +150,24 @@ class DepositViewController: UIViewController {
                         button.setOwned()
                     }
                 }
+                for button in chooseButtonCollection {
+                    if button.tag == 5 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
+                    }
+                }
             case 6:
                 for button in buyButtonCollection {
                     if button.tag == 6 {
                         button.setOwned()
+                    }
+                }
+                for button in chooseButtonCollection {
+                    if button.tag == 6 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
                     }
                 }
             case 7:
@@ -114,16 +176,37 @@ class DepositViewController: UIViewController {
                         button.setOwned()
                     }
                 }
+                for button in chooseButtonCollection {
+                    if button.tag == 7 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
+                    }
+                }
             case 8:
                 for button in buyButtonCollection {
                     if button.tag == 8 {
                         button.setOwned()
                     }
                 }
+                for button in chooseButtonCollection {
+                    if button.tag == 8 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
+                    }
+                }
             case 9:
                 for button in buyButtonCollection {
                     if button.tag == 9 {
                         button.setOwned()
+                    }
+                }
+                for button in chooseButtonCollection {
+                    if button.tag == 9 {
+                        DispatchQueue.main.async {
+                            button.isEnabled = true
+                        }
                     }
                 }
             default:
@@ -145,9 +228,6 @@ class DepositViewController: UIViewController {
         item8ImageView.image = UIImage(named: "item8")
         item9ImageView.image = UIImage(named: "item9")
         
-        
-        
-        
     }
 
 }
@@ -161,8 +241,7 @@ extension UIButton {
         self.setTitle("✔︎", for: .normal)
         self.isEnabled = false
         self.backgroundColor = UIColor.darkGray
-        APIrequest.shared.purchaseItem(UserDefaults.standard.string(forKey: "api_token")!, tag) { (_) in
-        }
+        
     }
     
     func setTheme(is set: Bool) {
