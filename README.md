@@ -18,3 +18,6 @@ Rules:
 7. if the ghost touchs you (which means, after 60 seconds of the game begins), you lose
 
 8. you can long press the screen in the game time, a snapshot of the correct turned on light position will shows up in the upper-right corner of the screen, it would helps you a lot
+
+Demo:
+![](https://i.imgur.com/Cb65C9G.gif)
