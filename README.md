@@ -21,3 +21,4 @@ Rules:
 Demo (this gif's game time duration is a short version, so you can see the whole flow of the game in a few secs):
 
 ![gif](https://github.com/atyrcp/Light-On/blob/master/Demo.gif)
+
